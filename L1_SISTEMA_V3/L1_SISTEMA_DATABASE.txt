@@ -1,0 +1,187 @@
+-- Crear la base de datos
+CREATE DATABASE L1_Sistemas;
+GO
+
+-- Usar la base de datos
+USE L1_Sistemas;
+GO
+
+-- Crear la tabla Conductores
+CREATE TABLE Conductores (
+    id_conductor INT IDENTITY(1,1) PRIMARY KEY,
+    dni VARCHAR(8) NOT NULL UNIQUE,
+    nombre_completo VARCHAR(100) NOT NULL,
+    tipo_conductor VARCHAR(2) NOT NULL, -- 'FT' o 'PT'
+    base_asignada VARCHAR(3) NOT NULL, -- Ejemplo: 'VES', 'BAY'
+    habilitado_ensenar BIT NOT NULL,
+    estado VARCHAR(15) NOT NULL, -- 'HABILITADO' o 'NO HABILITADO'
+    saldo_tiempo TIME NOT NULL, -- Tiempo disponible para trabajar
+    fecha_creacion DATETIME DEFAULT GETDATE() -- Fecha de creación del conductor
+);
+GO
+
+-- Insertar datos en Conductores
+INSERT INTO Conductores (dni, nombre_completo, tipo_conductor, base_asignada, habilitado_ensenar, estado, saldo_tiempo)
+VALUES 
+('75610056', 'JOEL JEFFERSON GOMEZ OLGUIN', 'FT', 'VES', 1, 'HABILITADO', '02:00'),
+('12345678', 'Karolay Huamani Villavicencio', 'PT', 'BAY', 0, 'HABILITADO', '02:30'),
+('73056176', 'Mauro Diego Alvan De la cruz', 'FT', 'VES', 1, 'HABILITADO', '04:00');
+GO
+
+-- Crear la tabla Usuarios
+CREATE TABLE Usuarios (
+    id_usuario INT IDENTITY(1,1) PRIMARY KEY,
+    usuario VARCHAR(50) NOT NULL,
+    contrasena_hash VARCHAR(255) NOT NULL,
+    rol VARCHAR(15) NOT NULL, -- 'CONDUCTOR' o 'ADMIN'
+    id_conductor INT NULL, -- Puede ser nulo para administradores
+    fecha_creacion DATETIME DEFAULT GETDATE(), -- Fecha de creación del usuario
+    estado_usuario VARCHAR(15) DEFAULT 'ACTIVO', -- Estado del usuario (ACTIVO, INACTIVO)
+    FOREIGN KEY (id_conductor) REFERENCES Conductores(id_conductor) ON DELETE SET NULL
+);
+GO
+
+-- Insertar datos en Usuarios (admin y conductores)
+INSERT INTO Usuarios (usuario, contrasena_hash, rol, id_conductor)
+VALUES 
+('admin_mauro', 'hashed_73056176', 'ADMIN', NULL),
+('75610056', 'hashed_pass_joel', 'CONDUCTOR', (SELECT id_conductor FROM Conductores WHERE dni = '75610056')),
+('12345678', 'hashed_pass_karolay', 'CONDUCTOR', (SELECT id_conductor FROM Conductores WHERE dni = '12345678'));
+GO
+
+-- Crear la tabla Turnos
+CREATE TABLE Turnos (
+    id_turno INT IDENTITY(1,1) PRIMARY KEY,
+    codigo_turno VARCHAR(50) NOT NULL,
+    tipo_turno VARCHAR(50) NOT NULL, -- 'NORMAL', 'ESPECIAL', etc.
+    hora_inicio TIME NOT NULL,
+    hora_fin TIME NOT NULL,
+    base_inicio VARCHAR(50) NOT NULL,
+    base_fin VARCHAR(50) NOT NULL,
+    carrera_anterior VARCHAR(50),
+    carrera_asignada VARCHAR(50),
+    carrera_posterior VARCHAR(50),
+    tipo_carrera VARCHAR(50),
+    tiene_refrigerio BIT NOT NULL,
+    hora_refrigerio TIME NULL, -- Hora del refrigerio (si tiene)
+    tiempo_laborado TIME NOT NULL -- Tiempo total trabajado
+);
+GO
+
+
+
+-- Crear la tabla Asignaciones
+CREATE TABLE Asignaciones (
+    id_asignacion INT IDENTITY(1,1) PRIMARY KEY,
+    id_conductor INT NOT NULL,
+    id_turno INT NOT NULL,
+    fecha DATE NOT NULL,
+    dia_semana VARCHAR(10) NOT NULL,
+    observaciones VARCHAR(MAX) NULL,
+    FOREIGN KEY (id_conductor) REFERENCES Conductores(id_conductor),
+    FOREIGN KEY (id_turno) REFERENCES Turnos(id_turno)
+);
+GO
+
+
+-- Crear la tabla Carreras
+CREATE TABLE Carreras (
+    id_carrera INT IDENTITY(1,1) PRIMARY KEY,
+    id_turno INT NOT NULL,
+    carrera_nombre VARCHAR(255) NOT NULL,
+    hora_inicio TIME NOT NULL,
+    hora_fin TIME NOT NULL,
+    tiene_refrigerio BIT NOT NULL,
+    cantidad_carreras INT NOT NULL,
+    tipo_carrera VARCHAR(50),
+    FOREIGN KEY (id_turno) REFERENCES Turnos(id_turno)
+);
+GO
+
+
+-- Crear la tabla SolicitudesCambio
+CREATE TABLE SolicitudesCambio (
+    id_solicitud INT IDENTITY(1,1) PRIMARY KEY,
+    fecha_solicitud DATE NOT NULL,
+    fecha_turno DATE NOT NULL,
+    id_conductor_solicitante INT NOT NULL,
+    id_conductor_receptor INT NOT NULL,
+    id_asignacion_original INT NOT NULL,
+    id_asignacion_solicitada INT NOT NULL,
+    estado_receptor VARCHAR(10) NOT NULL, -- 'PENDIENTE', 'SI', 'NO'
+    estado_admin VARCHAR(10) NOT NULL, -- 'PENDIENTE', 'SI', 'NO'
+    observacion_admin VARCHAR(MAX) NULL,
+    comentarios_conductor VARCHAR(MAX) NULL, -- Comentarios del conductor
+    FOREIGN KEY (id_conductor_solicitante) REFERENCES Conductores(id_conductor),
+    FOREIGN KEY (id_conductor_receptor) REFERENCES Conductores(id_conductor),
+    FOREIGN KEY (id_asignacion_original) REFERENCES Asignaciones(id_asignacion),
+    FOREIGN KEY (id_asignacion_solicitada) REFERENCES Asignaciones(id_asignacion)
+);
+GO
+
+
+
+-- Crear la tabla Notificaciones
+CREATE TABLE Notificaciones (
+    id_notificacion INT IDENTITY(1,1) PRIMARY KEY,
+    id_usuario INT NOT NULL,
+    mensaje VARCHAR(255) NOT NULL,
+    estado VARCHAR(20) DEFAULT 'PENDIENTE', -- Estado: PENDIENTE, LEÍDO
+    fecha DATETIME DEFAULT GETDATE(), -- Fecha y hora de la notificación
+    FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario)
+);
+GO
+
+-- Crear la tabla Auditoría
+CREATE TABLE Auditoria (
+    id_auditoria INT IDENTITY(1,1) PRIMARY KEY,
+    id_usuario INT NOT NULL,
+    accion VARCHAR(100) NOT NULL,
+    descripcion VARCHAR(MAX),
+    fecha_hora DATETIME DEFAULT GETDATE(), -- Fecha y hora de la auditoría
+    FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario)
+);
+GO
+
+CREATE TABLE DatosPersonales (
+    dni VARCHAR(8) PRIMARY KEY,
+    nombres VARCHAR(100),
+    primer_apellido VARCHAR(50),
+    segundo_apellido VARCHAR(50),
+    telefono VARCHAR(15),
+    correo VARCHAR(100),
+    contacto_emergencia VARCHAR(100),
+    telefono_emergencia VARCHAR(15),
+    fecha_nacimiento VARCHAR(20),
+    foto_perfil VARCHAR(255),
+    FOREIGN KEY (dni) REFERENCES Conductores(dni) ON DELETE CASCADE
+);
+go
+
+
+
+select*from DatosPersonales;
+
+select*from Usuarios;
+
+
+
+UPDATE Usuarios
+
+SET usuario = '74379748', contrasena_hash = '74379748'
+WHERE id_usuario = 3;
+
+INSERT INTO Usuarios (usuario, contrasena_hash, rol, id_conductor)
+VALUES ('12345678', '123456789', 'CONDUCTOR', 3);
+
+
+INSERT INTO DatosPersonales (dni, nombres, primer_apellido, segundo_apellido)
+VALUES ('73056176', 'Mauro', 'Alvan', 'De la Cruz');
+
+INSERT INTO Conductores (dni, nombre_completo, tipo_conductor, base_asignada, habilitado_ensenar, estado, saldo_tiempo)
+VALUES ('74379748', 'Karolay Huamani Villavicencio', 'PT', 'BAY', 0, 'HABILITADO', '02:30');
+
+
+INSERT INTO DatosPersonales (dni, nombres, primer_apellido, segundo_apellido)
+VALUES ('74379748', 'Karolay', 'Huamani', 'Villavicencio');
+
