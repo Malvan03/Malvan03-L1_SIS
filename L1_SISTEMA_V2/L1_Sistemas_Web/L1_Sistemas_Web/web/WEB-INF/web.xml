@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1"
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+
+    <servlet>
+        <servlet-name>TurnoController</servlet-name>
+        <servlet-class>CONTROLADOR.TurnoController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TurnoController</servlet-name>
+        <url-pattern>/TurnoController</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LoginController</servlet-name>
+        <servlet-class>CONTROLADOR.LoginController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginController</servlet-name>
+        <url-pattern>/LoginController</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RegistrarTurnoController</servlet-name>
+        <servlet-class>CONTROLADOR.RegistrarTurnoController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegistrarTurnoController</servlet-name>
+        <url-pattern>/RegistrarTurnoController</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CerrarSesionController</servlet-name>
+        <servlet-class>CONTROLADOR.CerrarSesionController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CerrarSesionController</servlet-name>
+        <url-pattern>/CerrarSesionController</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SolicitudesAdminController</servlet-name>
+        <servlet-class>CONTROLADOR.SolicitudesAdminController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SolicitudesAdminController</servlet-name>
+        <url-pattern>/SolicitudesAdminController</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MisTurnosController</servlet-name>
+        <servlet-class>CONTROLADOR.MisTurnosController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MisTurnosController</servlet-name>
+        <url-pattern>/MisTurnosController</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SolicitarCambioController</servlet-name>
+        <servlet-class>CONTROLADOR.SolicitarCambioController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SolicitarCambioController</servlet-name>
+        <url-pattern>/SolicitarCambioController</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EstadoSolicitudesController</servlet-name>
+        <servlet-class>CONTROLADOR.EstadoSolicitudesController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EstadoSolicitudesController</servlet-name>
+        <url-pattern>/EstadoSolicitudesController</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DetalleTurnoController</servlet-name>
+        <servlet-class>CONTROLADOR.DetalleTurnoController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DetalleTurnoController</servlet-name>
+        <url-pattern>/DetalleTurnoController</url-pattern>
+    </servlet-mapping>
+
+</web-app>
