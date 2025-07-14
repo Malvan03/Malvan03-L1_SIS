@@ -1,0 +1,161 @@
+body {
+    background: #f8f9fa;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+}
+
+.container-home {
+    max-width: 950px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 22px;
+    box-shadow: 0 4px 32px #0002;
+    padding: 32px 28px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    width: 85px;
+    height: 85px;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.welcome {
+    flex: 2;
+    min-width: 170px;
+}
+
+.modo-conductor {
+    color: #43b049;
+    font-weight: bold;
+    font-size: 1.13em;
+    letter-spacing: 1px;
+}
+
+.fecha {
+    font-size: 0.97em;
+    color: #888;
+    margin-top: 2px;
+}
+
+.user-panel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-foto {
+    width: 54px;
+    height: 54px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #43b049;
+    box-shadow: 0 2px 8px #0002;
+}
+
+.editar-perfil {
+    background: #e9ecef;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 6px;
+    transition: background 0.2s;
+    font-size: 1.28em;
+}
+.editar-perfil:hover { background: #e5fae7; }
+
+.logout {
+    margin-left: 8px;
+    font-weight: 500;
+    padding: 6px 16px;
+}
+
+.notificaciones {
+    position: relative;
+}
+
+.noti-dropdown {
+    position: absolute;
+    right: 0;
+    top: 44px;
+    min-width: 240px;
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    box-shadow: 0 4px 24px #0002;
+    z-index: 100;
+    padding: 8px 0;
+    max-height: 340px;
+    overflow-y: auto;
+}
+
+.noti-item {
+    padding: 7px 18px;
+    font-size: 0.99em;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.noti-item.no-leido {
+    background: #e5fae7;
+    font-weight: bold;
+}
+
+.noti-dropdown hr {
+    margin: 6px 0;
+}
+
+.noti-dropdown a {
+    display: block;
+    text-align: center;
+    color: #43b049;
+    text-decoration: none;
+    padding: 7px;
+    font-weight: bold;
+}
+
+.main-conductor-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: center;
+    margin: 40px 0 20px 0;
+}
+
+.main-conductor-menu button {
+    padding: 13px 24px;
+    background: #43b049;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    font-weight: bold;
+    font-size: 1.07em;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.18s, transform 0.14s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 12px #0001;
+}
+.main-conductor-menu button:hover {
+    background: #388e3c;
+    transform: scale(1.04) translateY(-2px);
+}
+@media (max-width: 750px) {
+    .container-home { padding: 10px; }
+    .main-conductor-menu { flex-direction: column; gap: 13px;}
+    .header { flex-direction: column; gap: 12px; }
+}

@@ -1,0 +1,146 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f4f6fa;
+}
+
+.container-home, .container {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+    margin-top: 24px;
+    margin-bottom: 32px;
+    max-width: 1250px;
+}
+
+h2, h3, h4, h5 {
+    color: #2376d9;
+    font-weight: 700;
+}
+
+.table-custom th {
+    background-color: #2376d9;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+}
+
+.table-custom td {
+    background-color: #fff;
+    color: #222;
+    font-size: 1em;
+    vertical-align: middle;
+}
+
+.table-custom tbody tr:hover {
+    background-color: #f2f7ff;
+    transition: background 0.15s;
+}
+
+.btn-primary, .btn-success {
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    border-radius: 6px;
+}
+
+.btn-outline-secondary {
+    border-radius: 6px;
+    color: #2376d9;
+    border-color: #2376d9;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #2376d9;
+    color: #fff;
+    border-color: #2376d9;
+}
+
+.user-panel img {
+    border: 2px solid #2376d9;
+    object-fit: cover;
+}
+
+.form-control, .form-select {
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.form-label {
+    font-weight: 500;
+}
+
+.mb-3 label {
+    color: #2376d9;
+    font-weight: 500;
+}
+
+.modal-header {
+    background-color: #2376d9;
+    color: #fff;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.alert-success {
+    background: #e8f7ee;
+    color: #197d45;
+    border: 1px solid #bae7cd;
+    font-weight: 500;
+}
+.alert-danger {
+    background: #fff3f3;
+    color: #c0392b;
+    border: 1px solid #f5b7b1;
+    font-weight: 500;
+}
+
+.action-link {
+    margin: 0 3px;
+    color: #2376d9;
+    font-size: 1.18em;
+    text-decoration: none;
+    transition: color 0.12s;
+}
+
+.action-link:hover {
+    color: #14508a;
+    text-decoration: underline;
+}
+
+.editable-row td {
+    background-color: #fffbe0;
+}
+
+.editable-cell {
+    border: 1px dashed #2376d9;
+    padding: 5px;
+}
+
+#buscadorCampo, #buscadorValor {
+    font-size: 1em;
+}
+
+#buscadorValorContainer {
+    min-width: 180px;
+}
+
+.bi {
+    vertical-align: -0.18em;
+}
+
+.logo {
+    height: 52px;
+    width: auto;
+    cursor: pointer;
+    border-radius: 9px;
+    box-shadow: 0 2px 10px rgba(44,62,80,0.08);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    background: #eaeaea;
+}
+::-webkit-scrollbar-thumb {
+    background: #2376d9;
+    border-radius: 8px;
+}
