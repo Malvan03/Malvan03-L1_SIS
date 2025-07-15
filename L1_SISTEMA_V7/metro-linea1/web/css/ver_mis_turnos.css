@@ -1,0 +1,89 @@
+/* ----- Estilos para ver_mis_turnos.jsp ----- */
+
+.ver-turnos-header h2 {
+    letter-spacing: 1px;
+    color: #222;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.ver-turnos-header .bi-person-badge {
+    color: #43b049;
+    margin-right: 2px;
+    vertical-align: -2px;
+    font-size: 1.1em;
+}
+
+.ver-turnos-header .bi-calendar-event {
+    color: #2376d9;
+    margin-right: 2px;
+    vertical-align: -2px;
+    font-size: 1em;
+}
+
+.ver-turnos-header .bi-credit-card {
+    color: #999;
+    margin-right: 2px;
+    vertical-align: -2px;
+    font-size: 1em;
+}
+
+.ver-turnos-header img {
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px #0001;
+    border: 2px solid #43b049;
+}
+
+.ver-turnos-header img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 0 4px #43b04933;
+}
+
+.ver-turnos-header .btn-outline-success {
+    border-radius: 50%;
+    padding: 7px 10px;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.table thead th, .table-success th {
+    text-align: center;
+    vertical-align: middle;
+    font-weight: 600;
+    background-color: #e9fbe8 !important;
+}
+
+.table-bordered > :not(caption) > * > * {
+    border-color: #b1dfbb !important;
+}
+
+.table tbody tr td {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1em;
+}
+
+.btn-outline-secondary, .btn-primary {
+    min-width: 180px;
+    font-size: 1.05em;
+}
+
+@media (max-width: 768px) {
+    .ver-turnos-header img {
+        width: 56px !important;
+        height: 56px !important;
+    }
+    .ver-turnos-header h2 {
+        font-size: 1.5rem;
+    }
+    .btn-outline-secondary, .btn-primary {
+        min-width: 120px;
+        font-size: 1em;
+    }
+}
+
+.container {
+    max-width: 940px;
+}

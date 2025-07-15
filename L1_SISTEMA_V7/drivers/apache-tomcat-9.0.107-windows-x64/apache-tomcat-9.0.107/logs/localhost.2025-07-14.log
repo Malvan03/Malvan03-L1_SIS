@@ -1,0 +1,747 @@
+14-Jul-2025 00:34:02.649 SEVERE [http-nio-8080-exec-151] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [jsp] en el contexto con ruta [/metro-linea1] lanzó la excepción [No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [57] en el archivo jsp: [/templates/header_admin.jspf]
+foto cannot be resolved to a variable
+54:                     </li>
+55:                     <li class="nav-item ms-3">
+56:                         <!-- Aquí usamos las variables que YA DECLARASTE en el JSP principal -->
+57:                         <img src="images/<%= foto %>" alt="Foto perfil" class="rounded-circle" style="height:38px; width:38px; object-fit:cover; border:2px solid #fff;">
+58:                         <span class="text-white ms-2" style="font-size:0.98em;"><%= nombre %></span>
+59:                     </li>
+60:                 </ul>
+
+
+Ha tenido lugar un error en la línea: [58] en el archivo jsp: [/templates/header_admin.jspf]
+nombre cannot be resolved to a variable
+55:                     <li class="nav-item ms-3">
+56:                         <!-- Aquí usamos las variables que YA DECLARASTE en el JSP principal -->
+57:                         <img src="images/<%= foto %>" alt="Foto perfil" class="rounded-circle" style="height:38px; width:38px; object-fit:cover; border:2px solid #fff;">
+58:                         <span class="text-white ms-2" style="font-size:0.98em;"><%= nombre %></span>
+59:                     </li>
+60:                 </ul>
+61:             </div>
+
+
+Stacktrace:] con causa raíz
+	org.apache.jasper.JasperException: No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [57] en el archivo jsp: [/templates/header_admin.jspf]
+foto cannot be resolved to a variable
+54:                     </li>
+55:                     <li class="nav-item ms-3">
+56:                         <!-- Aquí usamos las variables que YA DECLARASTE en el JSP principal -->
+57:                         <img src="images/<%= foto %>" alt="Foto perfil" class="rounded-circle" style="height:38px; width:38px; object-fit:cover; border:2px solid #fff;">
+58:                         <span class="text-white ms-2" style="font-size:0.98em;"><%= nombre %></span>
+59:                     </li>
+60:                 </ul>
+
+
+Ha tenido lugar un error en la línea: [58] en el archivo jsp: [/templates/header_admin.jspf]
+nombre cannot be resolved to a variable
+55:                     <li class="nav-item ms-3">
+56:                         <!-- Aquí usamos las variables que YA DECLARASTE en el JSP principal -->
+57:                         <img src="images/<%= foto %>" alt="Foto perfil" class="rounded-circle" style="height:38px; width:38px; object-fit:cover; border:2px solid #fff;">
+58:                         <span class="text-white ms-2" style="font-size:0.98em;"><%= nombre %></span>
+59:                     </li>
+60:                 </ul>
+61:             </div>
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:573)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:344)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:330)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:591)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:379)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:356)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:307)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:656)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:935)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1826)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+14-Jul-2025 01:09:45.309 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+14-Jul-2025 01:09:45.309 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+14-Jul-2025 01:09:50.814 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+14-Jul-2025 01:09:50.814 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+14-Jul-2025 01:09:50.821 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@285d851a')
+14-Jul-2025 01:10:24.613 SEVERE [http-nio-8080-exec-5] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [jsp] en el contexto con ruta [/metro-linea1] lanzó la excepción [org.apache.jasper.JasperException: javax.el.ELException: Failed to parse the expression [${campo==='modalidad'?'<option value="FIJO">FIJO</option><option value="ROTATIVO">ROTATIVO</option>':''}]] con causa raíz
+	org.apache.el.parser.ParseException: Encountered " "=" "= "" at line 1, column 10.
+Was expecting one of:
+    "{" ...
+    <INTEGER_LITERAL> ...
+    <FLOATING_POINT_LITERAL> ...
+    <STRING_LITERAL> ...
+    "true" ...
+    "false" ...
+    "null" ...
+    "(" ...
+    "[" ...
+    "!" ...
+    "not" ...
+    "empty" ...
+    "-" ...
+    <IDENTIFIER> ...
+    "!" ...
+    "not" ...
+    
+		at org.apache.el.parser.ELParser.generateParseException(ELParser.java:4222)
+		at org.apache.el.parser.ELParser.jj_consume_token(ELParser.java:4066)
+		at org.apache.el.parser.ELParser.Unary(ELParser.java:1733)
+		at org.apache.el.parser.ELParser.Multiplication(ELParser.java:1350)
+		at org.apache.el.parser.ELParser.Math(ELParser.java:1244)
+		at org.apache.el.parser.ELParser.Concatenation(ELParser.java:1188)
+		at org.apache.el.parser.ELParser.Compare(ELParser.java:939)
+		at org.apache.el.parser.ELParser.Equality(ELParser.java:839)
+		at org.apache.el.parser.ELParser.And(ELParser.java:724)
+		at org.apache.el.parser.ELParser.Or(ELParser.java:645)
+		at org.apache.el.parser.ELParser.Choice(ELParser.java:591)
+		at org.apache.el.parser.ELParser.Assignment(ELParser.java:296)
+		at org.apache.el.parser.ELParser.Semicolon(ELParser.java:222)
+		at org.apache.el.parser.ELParser.Expression(ELParser.java:215)
+		at org.apache.el.parser.ELParser.DynamicExpression(ELParser.java:176)
+		at org.apache.el.parser.ELParser.CompositeExpression(ELParser.java:48)
+		at org.apache.el.lang.ExpressionBuilder.createNodeInternal(ExpressionBuilder.java:108)
+		at org.apache.el.lang.ExpressionBuilder.build(ExpressionBuilder.java:167)
+		at org.apache.el.lang.ExpressionBuilder.createValueExpression(ExpressionBuilder.java:220)
+		at org.apache.el.ExpressionFactoryImpl.createValueExpression(ExpressionFactoryImpl.java:62)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor.prepareExpression(Validator.java:1434)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor.visit(Validator.java:670)
+		at org.apache.jasper.compiler.Node$ELExpression.accept(Node.java:885)
+		at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2241)
+		at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2297)
+		at org.apache.jasper.compiler.Node$Visitor.visit(Node.java:2303)
+		at org.apache.jasper.compiler.Node$Root.accept(Node.java:436)
+		at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2241)
+		at org.apache.jasper.compiler.Validator.validateExDirectives(Validator.java:1644)
+		at org.apache.jasper.compiler.Compiler.generateJava(Compiler.java:210)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:366)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:344)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:330)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:591)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:379)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:356)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:307)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:656)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:935)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1826)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+14-Jul-2025 01:14:19.918 SEVERE [http-nio-8080-exec-11] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [jsp] en el contexto con ruta [/metro-linea1] lanzó la excepción [No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [57] en el archivo jsp: [/templates/header_admin.jspf]
+foto cannot be resolved to a variable
+54:                     </li>
+55:                     <li class="nav-item ms-3">
+56:                         <!-- Aquí usamos las variables que YA DECLARASTE en el JSP principal -->
+57:                         <img src="images/<%= foto %>" alt="Foto perfil" class="rounded-circle" style="height:38px; width:38px; object-fit:cover; border:2px solid #fff;">
+58:                         <span class="text-white ms-2" style="font-size:0.98em;"><%= nombre %></span>
+59:                     </li>
+60:                 </ul>
+
+
+Ha tenido lugar un error en la línea: [58] en el archivo jsp: [/templates/header_admin.jspf]
+nombre cannot be resolved to a variable
+55:                     <li class="nav-item ms-3">
+56:                         <!-- Aquí usamos las variables que YA DECLARASTE en el JSP principal -->
+57:                         <img src="images/<%= foto %>" alt="Foto perfil" class="rounded-circle" style="height:38px; width:38px; object-fit:cover; border:2px solid #fff;">
+58:                         <span class="text-white ms-2" style="font-size:0.98em;"><%= nombre %></span>
+59:                     </li>
+60:                 </ul>
+61:             </div>
+
+
+Stacktrace:] con causa raíz
+	org.apache.jasper.JasperException: No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [57] en el archivo jsp: [/templates/header_admin.jspf]
+foto cannot be resolved to a variable
+54:                     </li>
+55:                     <li class="nav-item ms-3">
+56:                         <!-- Aquí usamos las variables que YA DECLARASTE en el JSP principal -->
+57:                         <img src="images/<%= foto %>" alt="Foto perfil" class="rounded-circle" style="height:38px; width:38px; object-fit:cover; border:2px solid #fff;">
+58:                         <span class="text-white ms-2" style="font-size:0.98em;"><%= nombre %></span>
+59:                     </li>
+60:                 </ul>
+
+
+Ha tenido lugar un error en la línea: [58] en el archivo jsp: [/templates/header_admin.jspf]
+nombre cannot be resolved to a variable
+55:                     <li class="nav-item ms-3">
+56:                         <!-- Aquí usamos las variables que YA DECLARASTE en el JSP principal -->
+57:                         <img src="images/<%= foto %>" alt="Foto perfil" class="rounded-circle" style="height:38px; width:38px; object-fit:cover; border:2px solid #fff;">
+58:                         <span class="text-white ms-2" style="font-size:0.98em;"><%= nombre %></span>
+59:                     </li>
+60:                 </ul>
+61:             </div>
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:573)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:344)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:330)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:591)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:379)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:356)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:307)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:656)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:935)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1826)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+14-Jul-2025 03:03:46.113 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+14-Jul-2025 03:03:46.113 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+14-Jul-2025 03:38:04.442 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+14-Jul-2025 03:38:04.442 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+14-Jul-2025 03:38:04.445 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@45792847')
+14-Jul-2025 04:05:38.785 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+14-Jul-2025 04:05:38.785 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+14-Jul-2025 04:05:45.124 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+14-Jul-2025 04:05:45.124 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+14-Jul-2025 04:05:45.128 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@3f23a3a0')
+14-Jul-2025 04:15:00.193 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+14-Jul-2025 04:15:00.193 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+14-Jul-2025 04:16:13.416 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+14-Jul-2025 04:16:13.417 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+14-Jul-2025 04:16:13.429 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@5ab14cb9')
+14-Jul-2025 10:47:55.309 SEVERE [http-nio-8080-exec-5] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [jsp] en el contexto con ruta [/metro-linea1] lanzó la excepción [No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [8] en el archivo jsp: [/templates/header_admin.jspf]
+Duplicate local variable nombre
+5:         response.sendRedirect("login.jsp");
+6:         return;
+7:     }
+8:     String nombre = usuarioActual.getNombres();
+9:     if (usuarioActual.getApellidoPaterno() != null && !usuarioActual.getApellidoPaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoPaterno();
+10:     if (usuarioActual.getApellidoMaterno() != null && !usuarioActual.getApellidoMaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoMaterno();
+11:     String foto = (usuarioActual.getFotoPerfil() != null && !usuarioActual.getFotoPerfil().isEmpty()) ? usuarioActual.getFotoPerfil() : "default_avatar.png";
+
+
+Ha tenido lugar un error en la línea: [11] en el archivo jsp: [/templates/header_admin.jspf]
+Duplicate local variable foto
+8:     String nombre = usuarioActual.getNombres();
+9:     if (usuarioActual.getApellidoPaterno() != null && !usuarioActual.getApellidoPaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoPaterno();
+10:     if (usuarioActual.getApellidoMaterno() != null && !usuarioActual.getApellidoMaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoMaterno();
+11:     String foto = (usuarioActual.getFotoPerfil() != null && !usuarioActual.getFotoPerfil().isEmpty()) ? usuarioActual.getFotoPerfil() : "default_avatar.png";
+12: %>
+13: <!DOCTYPE html>
+14: <html lang="es">
+
+
+Stacktrace:] con causa raíz
+	org.apache.jasper.JasperException: No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [8] en el archivo jsp: [/templates/header_admin.jspf]
+Duplicate local variable nombre
+5:         response.sendRedirect("login.jsp");
+6:         return;
+7:     }
+8:     String nombre = usuarioActual.getNombres();
+9:     if (usuarioActual.getApellidoPaterno() != null && !usuarioActual.getApellidoPaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoPaterno();
+10:     if (usuarioActual.getApellidoMaterno() != null && !usuarioActual.getApellidoMaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoMaterno();
+11:     String foto = (usuarioActual.getFotoPerfil() != null && !usuarioActual.getFotoPerfil().isEmpty()) ? usuarioActual.getFotoPerfil() : "default_avatar.png";
+
+
+Ha tenido lugar un error en la línea: [11] en el archivo jsp: [/templates/header_admin.jspf]
+Duplicate local variable foto
+8:     String nombre = usuarioActual.getNombres();
+9:     if (usuarioActual.getApellidoPaterno() != null && !usuarioActual.getApellidoPaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoPaterno();
+10:     if (usuarioActual.getApellidoMaterno() != null && !usuarioActual.getApellidoMaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoMaterno();
+11:     String foto = (usuarioActual.getFotoPerfil() != null && !usuarioActual.getFotoPerfil().isEmpty()) ? usuarioActual.getFotoPerfil() : "default_avatar.png";
+12: %>
+13: <!DOCTYPE html>
+14: <html lang="es">
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:573)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:344)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:330)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:591)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:379)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:356)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:307)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:656)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:935)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1826)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+14-Jul-2025 11:08:29.603 SEVERE [http-nio-8080-exec-7] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [jsp] en el contexto con ruta [/metro-linea1] lanzó la excepción [org.apache.jasper.JasperException: java.lang.ClassNotFoundException: org.apache.jsp.editar_005fperfil_jsp] con causa raíz
+	java.lang.ClassNotFoundException: org.apache.jsp.editar_005fperfil_jsp
+		at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:119)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:56)
+		at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:150)
+		at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:174)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:393)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:356)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:307)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:656)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:935)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1826)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+14-Jul-2025 11:08:29.604 SEVERE [http-nio-8080-exec-6] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [jsp] en el contexto con ruta [/metro-linea1] lanzó la excepción [No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [8] en el archivo jsp: [/templates/header_conductor.jspf]
+Duplicate local variable nombre
+5:         response.sendRedirect("login.jsp");
+6:         return;
+7:     }
+8:     String nombre = usuarioActual.getNombres();
+9:     if (usuarioActual.getApellidoPaterno() != null && !usuarioActual.getApellidoPaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoPaterno();
+10:     if (usuarioActual.getApellidoMaterno() != null && !usuarioActual.getApellidoMaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoMaterno();
+11:     String foto = (usuarioActual.getFotoPerfil() != null && !usuarioActual.getFotoPerfil().isEmpty()) ? usuarioActual.getFotoPerfil() : "default_avatar.png";
+
+
+Ha tenido lugar un error en la línea: [11] en el archivo jsp: [/templates/header_conductor.jspf]
+Duplicate local variable foto
+8:     String nombre = usuarioActual.getNombres();
+9:     if (usuarioActual.getApellidoPaterno() != null && !usuarioActual.getApellidoPaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoPaterno();
+10:     if (usuarioActual.getApellidoMaterno() != null && !usuarioActual.getApellidoMaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoMaterno();
+11:     String foto = (usuarioActual.getFotoPerfil() != null && !usuarioActual.getFotoPerfil().isEmpty()) ? usuarioActual.getFotoPerfil() : "default_avatar.png";
+12: %>
+13: <!DOCTYPE html>
+14: <html lang="es">
+
+
+Stacktrace:] con causa raíz
+	org.apache.jasper.JasperException: No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [8] en el archivo jsp: [/templates/header_conductor.jspf]
+Duplicate local variable nombre
+5:         response.sendRedirect("login.jsp");
+6:         return;
+7:     }
+8:     String nombre = usuarioActual.getNombres();
+9:     if (usuarioActual.getApellidoPaterno() != null && !usuarioActual.getApellidoPaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoPaterno();
+10:     if (usuarioActual.getApellidoMaterno() != null && !usuarioActual.getApellidoMaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoMaterno();
+11:     String foto = (usuarioActual.getFotoPerfil() != null && !usuarioActual.getFotoPerfil().isEmpty()) ? usuarioActual.getFotoPerfil() : "default_avatar.png";
+
+
+Ha tenido lugar un error en la línea: [11] en el archivo jsp: [/templates/header_conductor.jspf]
+Duplicate local variable foto
+8:     String nombre = usuarioActual.getNombres();
+9:     if (usuarioActual.getApellidoPaterno() != null && !usuarioActual.getApellidoPaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoPaterno();
+10:     if (usuarioActual.getApellidoMaterno() != null && !usuarioActual.getApellidoMaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoMaterno();
+11:     String foto = (usuarioActual.getFotoPerfil() != null && !usuarioActual.getFotoPerfil().isEmpty()) ? usuarioActual.getFotoPerfil() : "default_avatar.png";
+12: %>
+13: <!DOCTYPE html>
+14: <html lang="es">
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:573)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:344)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:330)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:591)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:379)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:356)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:307)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:656)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:935)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1826)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+14-Jul-2025 11:20:43.248 SEVERE [http-nio-8080-exec-10] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [jsp] en el contexto con ruta [/metro-linea1] lanzó la excepción [No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [8] en el archivo jsp: [/templates/header_conductor.jspf]
+Duplicate local variable nombre
+5:         response.sendRedirect("login.jsp");
+6:         return;
+7:     }
+8:     String nombre = usuarioActual.getNombres();
+9:     if (usuarioActual.getApellidoPaterno() != null && !usuarioActual.getApellidoPaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoPaterno();
+10:     if (usuarioActual.getApellidoMaterno() != null && !usuarioActual.getApellidoMaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoMaterno();
+11:     String foto = (usuarioActual.getFotoPerfil() != null && !usuarioActual.getFotoPerfil().isEmpty()) ? usuarioActual.getFotoPerfil() : "default_avatar.png";
+
+
+Ha tenido lugar un error en la línea: [11] en el archivo jsp: [/templates/header_conductor.jspf]
+Duplicate local variable foto
+8:     String nombre = usuarioActual.getNombres();
+9:     if (usuarioActual.getApellidoPaterno() != null && !usuarioActual.getApellidoPaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoPaterno();
+10:     if (usuarioActual.getApellidoMaterno() != null && !usuarioActual.getApellidoMaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoMaterno();
+11:     String foto = (usuarioActual.getFotoPerfil() != null && !usuarioActual.getFotoPerfil().isEmpty()) ? usuarioActual.getFotoPerfil() : "default_avatar.png";
+12: %>
+13: <!DOCTYPE html>
+14: <html lang="es">
+
+
+Stacktrace:] con causa raíz
+	org.apache.jasper.JasperException: No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [8] en el archivo jsp: [/templates/header_conductor.jspf]
+Duplicate local variable nombre
+5:         response.sendRedirect("login.jsp");
+6:         return;
+7:     }
+8:     String nombre = usuarioActual.getNombres();
+9:     if (usuarioActual.getApellidoPaterno() != null && !usuarioActual.getApellidoPaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoPaterno();
+10:     if (usuarioActual.getApellidoMaterno() != null && !usuarioActual.getApellidoMaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoMaterno();
+11:     String foto = (usuarioActual.getFotoPerfil() != null && !usuarioActual.getFotoPerfil().isEmpty()) ? usuarioActual.getFotoPerfil() : "default_avatar.png";
+
+
+Ha tenido lugar un error en la línea: [11] en el archivo jsp: [/templates/header_conductor.jspf]
+Duplicate local variable foto
+8:     String nombre = usuarioActual.getNombres();
+9:     if (usuarioActual.getApellidoPaterno() != null && !usuarioActual.getApellidoPaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoPaterno();
+10:     if (usuarioActual.getApellidoMaterno() != null && !usuarioActual.getApellidoMaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoMaterno();
+11:     String foto = (usuarioActual.getFotoPerfil() != null && !usuarioActual.getFotoPerfil().isEmpty()) ? usuarioActual.getFotoPerfil() : "default_avatar.png";
+12: %>
+13: <!DOCTYPE html>
+14: <html lang="es">
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:573)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:344)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:330)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:591)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:379)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:356)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:307)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:656)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:935)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1826)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+14-Jul-2025 11:41:07.685 SEVERE [http-nio-8080-exec-13] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [jsp] en el contexto con ruta [/metro-linea1] lanzó la excepción [No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [8] en el archivo jsp: [/templates/header_admin.jspf]
+Duplicate local variable nombre
+5:         response.sendRedirect("login.jsp");
+6:         return;
+7:     }
+8:     String nombre = usuarioActual.getNombres();
+9:     if (usuarioActual.getApellidoPaterno() != null && !usuarioActual.getApellidoPaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoPaterno();
+10:     if (usuarioActual.getApellidoMaterno() != null && !usuarioActual.getApellidoMaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoMaterno();
+11:     String foto = (usuarioActual.getFotoPerfil() != null && !usuarioActual.getFotoPerfil().isEmpty()) ? usuarioActual.getFotoPerfil() : "default_avatar.png";
+
+
+Ha tenido lugar un error en la línea: [11] en el archivo jsp: [/templates/header_admin.jspf]
+Duplicate local variable foto
+8:     String nombre = usuarioActual.getNombres();
+9:     if (usuarioActual.getApellidoPaterno() != null && !usuarioActual.getApellidoPaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoPaterno();
+10:     if (usuarioActual.getApellidoMaterno() != null && !usuarioActual.getApellidoMaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoMaterno();
+11:     String foto = (usuarioActual.getFotoPerfil() != null && !usuarioActual.getFotoPerfil().isEmpty()) ? usuarioActual.getFotoPerfil() : "default_avatar.png";
+12: %>
+13: <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2376d9;">
+14:     <div class="container">
+
+
+Stacktrace:] con causa raíz
+	org.apache.jasper.JasperException: No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [8] en el archivo jsp: [/templates/header_admin.jspf]
+Duplicate local variable nombre
+5:         response.sendRedirect("login.jsp");
+6:         return;
+7:     }
+8:     String nombre = usuarioActual.getNombres();
+9:     if (usuarioActual.getApellidoPaterno() != null && !usuarioActual.getApellidoPaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoPaterno();
+10:     if (usuarioActual.getApellidoMaterno() != null && !usuarioActual.getApellidoMaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoMaterno();
+11:     String foto = (usuarioActual.getFotoPerfil() != null && !usuarioActual.getFotoPerfil().isEmpty()) ? usuarioActual.getFotoPerfil() : "default_avatar.png";
+
+
+Ha tenido lugar un error en la línea: [11] en el archivo jsp: [/templates/header_admin.jspf]
+Duplicate local variable foto
+8:     String nombre = usuarioActual.getNombres();
+9:     if (usuarioActual.getApellidoPaterno() != null && !usuarioActual.getApellidoPaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoPaterno();
+10:     if (usuarioActual.getApellidoMaterno() != null && !usuarioActual.getApellidoMaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoMaterno();
+11:     String foto = (usuarioActual.getFotoPerfil() != null && !usuarioActual.getFotoPerfil().isEmpty()) ? usuarioActual.getFotoPerfil() : "default_avatar.png";
+12: %>
+13: <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2376d9;">
+14:     <div class="container">
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:573)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:344)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:330)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:591)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:379)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:356)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:307)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:656)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:935)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1826)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+14-Jul-2025 11:41:24.957 SEVERE [http-nio-8080-exec-15] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [jsp] en el contexto con ruta [/metro-linea1] lanzó la excepción [No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [8] en el archivo jsp: [/templates/header_admin.jspf]
+Duplicate local variable nombre
+5:         response.sendRedirect("login.jsp");
+6:         return;
+7:     }
+8:     String nombre = usuarioActual.getNombres();
+9:     if (usuarioActual.getApellidoPaterno() != null && !usuarioActual.getApellidoPaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoPaterno();
+10:     if (usuarioActual.getApellidoMaterno() != null && !usuarioActual.getApellidoMaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoMaterno();
+11:     String foto = (usuarioActual.getFotoPerfil() != null && !usuarioActual.getFotoPerfil().isEmpty()) ? usuarioActual.getFotoPerfil() : "default_avatar.png";
+
+
+Ha tenido lugar un error en la línea: [11] en el archivo jsp: [/templates/header_admin.jspf]
+Duplicate local variable foto
+8:     String nombre = usuarioActual.getNombres();
+9:     if (usuarioActual.getApellidoPaterno() != null && !usuarioActual.getApellidoPaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoPaterno();
+10:     if (usuarioActual.getApellidoMaterno() != null && !usuarioActual.getApellidoMaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoMaterno();
+11:     String foto = (usuarioActual.getFotoPerfil() != null && !usuarioActual.getFotoPerfil().isEmpty()) ? usuarioActual.getFotoPerfil() : "default_avatar.png";
+12: %>
+13: <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2376d9;">
+14:     <div class="container">
+
+
+Stacktrace:] con causa raíz
+	org.apache.jasper.JasperException: No se puede compilar la clase para JSP: 
+
+Ha tenido lugar un error en la línea: [8] en el archivo jsp: [/templates/header_admin.jspf]
+Duplicate local variable nombre
+5:         response.sendRedirect("login.jsp");
+6:         return;
+7:     }
+8:     String nombre = usuarioActual.getNombres();
+9:     if (usuarioActual.getApellidoPaterno() != null && !usuarioActual.getApellidoPaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoPaterno();
+10:     if (usuarioActual.getApellidoMaterno() != null && !usuarioActual.getApellidoMaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoMaterno();
+11:     String foto = (usuarioActual.getFotoPerfil() != null && !usuarioActual.getFotoPerfil().isEmpty()) ? usuarioActual.getFotoPerfil() : "default_avatar.png";
+
+
+Ha tenido lugar un error en la línea: [11] en el archivo jsp: [/templates/header_admin.jspf]
+Duplicate local variable foto
+8:     String nombre = usuarioActual.getNombres();
+9:     if (usuarioActual.getApellidoPaterno() != null && !usuarioActual.getApellidoPaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoPaterno();
+10:     if (usuarioActual.getApellidoMaterno() != null && !usuarioActual.getApellidoMaterno().isEmpty()) nombre += " " + usuarioActual.getApellidoMaterno();
+11:     String foto = (usuarioActual.getFotoPerfil() != null && !usuarioActual.getFotoPerfil().isEmpty()) ? usuarioActual.getFotoPerfil() : "default_avatar.png";
+12: %>
+13: <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2376d9;">
+14:     <div class="container">
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:573)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:344)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:330)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:591)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:379)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:356)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:307)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:656)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:935)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1826)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+14-Jul-2025 11:41:26.167 SEVERE [http-nio-8080-exec-20] org.apache.catalina.core.StandardWrapperValve.invoke El Servlet.service() para el servlet [jsp] en el contexto con ruta [/metro-linea1] lanzó la excepción [org.apache.jasper.JasperException: java.lang.ClassNotFoundException: org.apache.jsp.gestion_005fconductores_jsp] con causa raíz
+	java.lang.ClassNotFoundException: org.apache.jsp.gestion_005fconductores_jsp
+		at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:119)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:56)
+		at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:150)
+		at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:174)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:393)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:356)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:307)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:656)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:935)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1826)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:842)
