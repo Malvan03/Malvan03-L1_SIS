@@ -1,0 +1,197 @@
+11-Jul-2025 00:40:23.485 INFO [http-nio-8080-exec-1] org.apache.catalina.startup.HostConfig.undeploy Repliegue (undeploy) de la aplicación web que tiene como trayectoria de contexto [/metro-linea1]
+11-Jul-2025 00:40:36.123 INFO [main] org.apache.catalina.core.StandardServer.await Se ha recibido un comando de apagado a través del puerto de apagado. Parando la instancia del Servidor.
+11-Jul-2025 00:40:36.124 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+11-Jul-2025 00:40:36.343 INFO [main] org.apache.catalina.core.StandardService.stopInternal Parando servicio [Catalina]
+11-Jul-2025 00:40:36.383 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+11-Jul-2025 00:40:36.389 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+11-Jul-2025 00:40:39.985 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Nombre de la versión del servidor: Apache Tomcat/9.0.107
+11-Jul-2025 00:40:39.997 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:                      Jul 2 2025 07:01:03 UTC
+11-Jul-2025 00:40:39.999 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Número de versión de servidor:     9.0.107.0
+11-Jul-2025 00:40:39.999 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:                           Windows 11
+11-Jul-2025 00:40:39.999 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Versión de Systema Operativo:      10.0
+11-Jul-2025 00:40:39.999 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Arquitectura:                      amd64
+11-Jul-2025 00:40:40.001 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:                         C:\Program Files\Java\jdk-17
+11-Jul-2025 00:40:40.001 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:                       17.0.11+7-LTS-207
+11-Jul-2025 00:40:40.002 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Vededor JVM:                       Oracle Corporation
+11-Jul-2025 00:40:40.002 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:                     C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107
+11-Jul-2025 00:40:40.002 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:                     C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107
+11-Jul-2025 00:40:40.024 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.lang=ALL-UNNAMED
+11-Jul-2025 00:40:40.024 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.lang.invoke=ALL-UNNAMED
+11-Jul-2025 00:40:40.024 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+11-Jul-2025 00:40:40.026 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.io=ALL-UNNAMED
+11-Jul-2025 00:40:40.026 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util=ALL-UNNAMED
+11-Jul-2025 00:40:40.026 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+11-Jul-2025 00:40:40.026 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+11-Jul-2025 00:40:40.026 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.config.file=C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107\conf\logging.properties
+11-Jul-2025 00:40:40.027 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+11-Jul-2025 00:40:40.027 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djdk.tls.ephemeralDHKeySize=2048
+11-Jul-2025 00:40:40.027 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+11-Jul-2025 00:40:40.027 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dsun.io.useCanonCaches=false
+11-Jul-2025 00:40:40.027 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dignore.endorsed.dirs=
+11-Jul-2025 00:40:40.027 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.base=C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107
+11-Jul-2025 00:40:40.034 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.home=C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107
+11-Jul-2025 00:40:40.034 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.io.tmpdir=C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107\temp
+11-Jul-2025 00:40:40.045 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Cargada la biblioteca nativa APR de Apache Tomcat [1.3.1] con la versión APR [1.7.4].
+11-Jul-2025 00:40:40.045 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Capacidades APR: IPv6 [true], enviar fichero [true], aceptar filtros [false], aleatorio [true], UDS [true].
+11-Jul-2025 00:40:40.045 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+11-Jul-2025 00:40:40.062 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL inicializado correctamente [OpenSSL 3.0.14 4 Jun 2024]
+11-Jul-2025 00:40:40.736 INFO [main] org.apache.coyote.AbstractProtocol.init Inicializando el manejador de protocolo ["http-nio-8080"]
+
+11-Jul-2025 00:40:40.797 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1260] milliseconds
+11-Jul-2025 00:40:40.918 INFO [main] org.apache.catalina.core.StandardService.startInternal Arrancando servicio [Catalina]
+11-Jul-2025 00:40:40.918 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.107]
+11-Jul-2025 00:40:40.940 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107\webapps\docs] de la aplicación web
+11-Jul-2025 00:40:41.794 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107\webapps\docs] has finished in [848] ms
+11-Jul-2025 00:40:41.794 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107\webapps\examples] de la aplicación web
+11-Jul-2025 00:40:43.048 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107\webapps\examples] has finished in [1.253] ms
+11-Jul-2025 00:40:43.049 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107\webapps\host-manager] de la aplicación web
+11-Jul-2025 00:40:43.149 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107\webapps\host-manager] has finished in [101] ms
+11-Jul-2025 00:40:43.150 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107\webapps\manager] de la aplicación web
+11-Jul-2025 00:40:43.246 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107\webapps\manager] has finished in [95] ms
+11-Jul-2025 00:40:43.246 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107\webapps\ROOT] de la aplicación web
+11-Jul-2025 00:40:43.320 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107\webapps\ROOT] has finished in [74] ms
+11-Jul-2025 00:40:43.335 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+11-Jul-2025 00:40:43.445 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [2647] milliseconds
+11-Jul-2025 00:40:51.960 INFO [http-nio-8080-exec-2] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107\conf\Catalina\localhost\metro-linea1.xml]
+11-Jul-2025 00:40:51.963 WARNING [http-nio-8080-exec-2] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/metro-linea1] in deployment descriptor [C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107\conf\Catalina\localhost\metro-linea1.xml] has been ignored
+11-Jul-2025 00:40:52.278 SEVERE [http-nio-8080-exec-2] org.apache.catalina.startup.HostConfig.deployDescriptor Error durante el despliegue del descriptor de configuración [C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107\conf\Catalina\localhost\metro-linea1.xml]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:602)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:571)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:603)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:680)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:529)
+		at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1653)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+		at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:252)
+		at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:814)
+		at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:802)
+		at org.apache.catalina.manager.ManagerServlet.check(ManagerServlet.java:1470)
+		at org.apache.catalina.manager.ManagerServlet.deploy(ManagerServlet.java:943)
+		at org.apache.catalina.manager.ManagerServlet.doGet(ManagerServlet.java:307)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:529)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.filters.HttpHeaderSecurityFilter.doFilter(HttpHeaderSecurityFilter.java:129)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:597)
+		at org.apache.catalina.valves.RequestFilterValve.process(RequestFilterValve.java:354)
+		at org.apache.catalina.valves.RemoteAddrValve.invoke(RemoteAddrValve.java:54)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:656)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:935)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1826)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/metro-linea1]]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:406)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:179)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:599)
+		... 44 more
+	Caused by: java.lang.IllegalArgumentException: Los servlets llamados [GestionConductoresServlet] y [pe.linea1.servlet.GestionConductoresServlet] estan ambos mapeados al patrón de URL [/GestionConductoresServlet] el cual no esta permitido
+		at org.apache.tomcat.util.descriptor.web.WebXml.addServletMappingDecoded(WebXml.java:415)
+		at org.apache.tomcat.util.descriptor.web.WebXml.addServletMapping(WebXml.java:406)
+		at org.apache.catalina.startup.ContextConfig.processAnnotationWebServlet(ContextConfig.java:2555)
+		at org.apache.catalina.startup.ContextConfig.processClass(ContextConfig.java:2261)
+		at org.apache.catalina.startup.ContextConfig.processAnnotationsStream(ContextConfig.java:2250)
+		at org.apache.catalina.startup.ContextConfig.processAnnotationsWebResource(ContextConfig.java:2161)
+		at org.apache.catalina.startup.ContextConfig.processAnnotationsWebResource(ContextConfig.java:2156)
+		at org.apache.catalina.startup.ContextConfig.processAnnotationsWebResource(ContextConfig.java:2156)
+		at org.apache.catalina.startup.ContextConfig.processAnnotationsWebResource(ContextConfig.java:2156)
+		at org.apache.catalina.startup.ContextConfig.processClasses(ContextConfig.java:1361)
+		at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1271)
+		at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:972)
+		at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:290)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4407)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		... 45 more
+11-Jul-2025 00:40:52.293 INFO [http-nio-8080-exec-2] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107\conf\Catalina\localhost\metro-linea1.xml] has finished in [333] ms
+11-Jul-2025 00:44:32.281 INFO [http-nio-8080-exec-2] org.apache.catalina.startup.HostConfig.undeploy Repliegue (undeploy) de la aplicación web que tiene como trayectoria de contexto [/metro-linea1]
+11-Jul-2025 00:44:32.304 INFO [http-nio-8080-exec-4] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107\conf\Catalina\localhost\metro-linea1.xml]
+11-Jul-2025 00:44:32.305 WARNING [http-nio-8080-exec-4] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/metro-linea1] in deployment descriptor [C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107\conf\Catalina\localhost\metro-linea1.xml] has been ignored
+11-Jul-2025 00:44:32.424 INFO [http-nio-8080-exec-4] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107\conf\Catalina\localhost\metro-linea1.xml] has finished in [122] ms
+11-Jul-2025 00:44:32.429 INFO [http-nio-8080-exec-5] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/metro-linea1]] after start() had already been called. The second call will be ignored.
+11-Jul-2025 00:44:33.926 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.reload Falló la recarga del contexto [/metro-linea1]
+11-Jul-2025 00:44:33.961 INFO [Catalina-utility-1] org.apache.catalina.core.StandardContext.reload Ha comenzado la recarga de Contexto [/metro-linea1]
+11-Jul-2025 00:44:36.163 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+11-Jul-2025 00:44:36.325 INFO [Catalina-utility-1] org.apache.catalina.core.StandardContext.reload Se ha completado la recarga de este Contexto
+11-Jul-2025 00:44:37.469 INFO [http-nio-8080-exec-8] org.apache.catalina.startup.HostConfig.undeploy Repliegue (undeploy) de la aplicación web que tiene como trayectoria de contexto [/metro-linea1]
+11-Jul-2025 00:44:37.497 INFO [http-nio-8080-exec-3] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107\conf\Catalina\localhost\metro-linea1.xml]
+11-Jul-2025 00:44:37.502 WARNING [http-nio-8080-exec-3] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/metro-linea1] in deployment descriptor [C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107\conf\Catalina\localhost\metro-linea1.xml] has been ignored
+11-Jul-2025 00:44:38.427 INFO [http-nio-8080-exec-3] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+11-Jul-2025 00:44:38.488 INFO [http-nio-8080-exec-3] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107\conf\Catalina\localhost\metro-linea1.xml] has finished in [991] ms
+11-Jul-2025 00:57:22.002 INFO [http-nio-8080-exec-16] org.apache.catalina.core.StandardContext.reload Ha comenzado la recarga de Contexto [/metro-linea1]
+11-Jul-2025 00:57:22.018 WARNING [http-nio-8080-exec-16] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc La aplicación web [metro-linea1] registró el conductor JDBC [com.microsoft.sqlserver.jdbc.SQLServerDriver] pero falló al anular el registro mientras la aplicación web estaba parada. Para prevenir un fallo de memoria, se ha anulado el registro del conductor JDBC por la fuerza.
+11-Jul-2025 00:57:22.788 INFO [http-nio-8080-exec-16] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+11-Jul-2025 00:57:22.848 INFO [http-nio-8080-exec-16] org.apache.catalina.core.StandardContext.reload Se ha completado la recarga de este Contexto
+11-Jul-2025 00:57:23.367 INFO [http-nio-8080-exec-19] org.apache.catalina.startup.HostConfig.undeploy Repliegue (undeploy) de la aplicación web que tiene como trayectoria de contexto [/metro-linea1]
+11-Jul-2025 00:57:29.505 INFO [http-nio-8080-exec-21] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107\conf\Catalina\localhost\metro-linea1.xml]
+11-Jul-2025 00:57:29.507 WARNING [http-nio-8080-exec-21] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/metro-linea1] in deployment descriptor [C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107\conf\Catalina\localhost\metro-linea1.xml] has been ignored
+11-Jul-2025 00:57:30.407 INFO [http-nio-8080-exec-21] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+11-Jul-2025 00:57:30.466 INFO [http-nio-8080-exec-21] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107\conf\Catalina\localhost\metro-linea1.xml] has finished in [961] ms
+11-Jul-2025 00:57:30.473 INFO [http-nio-8080-exec-22] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/metro-linea1]] after start() had already been called. The second call will be ignored.
+11-Jul-2025 01:07:16.166 WARNING [http-nio-8080-exec-31] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc La aplicación web [metro-linea1] registró el conductor JDBC [com.microsoft.sqlserver.jdbc.SQLServerDriver] pero falló al anular el registro mientras la aplicación web estaba parada. Para prevenir un fallo de memoria, se ha anulado el registro del conductor JDBC por la fuerza.
+11-Jul-2025 01:07:16.679 INFO [http-nio-8080-exec-31] org.apache.catalina.startup.HostConfig.undeploy Repliegue (undeploy) de la aplicación web que tiene como trayectoria de contexto [/metro-linea1]
+11-Jul-2025 01:07:20.940 INFO [http-nio-8080-exec-27] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107\conf\Catalina\localhost\metro-linea1.xml]
+11-Jul-2025 01:07:20.944 WARNING [http-nio-8080-exec-27] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/metro-linea1] in deployment descriptor [C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107\conf\Catalina\localhost\metro-linea1.xml] has been ignored
+11-Jul-2025 01:07:21.953 INFO [http-nio-8080-exec-27] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+11-Jul-2025 01:07:21.984 INFO [http-nio-8080-exec-27] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107\conf\Catalina\localhost\metro-linea1.xml] has finished in [1.042] ms
+11-Jul-2025 01:07:21.988 INFO [http-nio-8080-exec-33] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/metro-linea1]] after start() had already been called. The second call will be ignored.
+11-Jul-2025 01:15:13.269 WARNING [http-nio-8080-exec-40] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc La aplicación web [metro-linea1] registró el conductor JDBC [com.microsoft.sqlserver.jdbc.SQLServerDriver] pero falló al anular el registro mientras la aplicación web estaba parada. Para prevenir un fallo de memoria, se ha anulado el registro del conductor JDBC por la fuerza.
+11-Jul-2025 01:15:13.775 INFO [http-nio-8080-exec-40] org.apache.catalina.startup.HostConfig.undeploy Repliegue (undeploy) de la aplicación web que tiene como trayectoria de contexto [/metro-linea1]
+11-Jul-2025 01:15:25.862 INFO [http-nio-8080-exec-37] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107\conf\Catalina\localhost\metro-linea1.xml]
+11-Jul-2025 01:15:25.862 WARNING [http-nio-8080-exec-37] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/metro-linea1] in deployment descriptor [C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107\conf\Catalina\localhost\metro-linea1.xml] has been ignored
+11-Jul-2025 01:15:26.294 INFO [http-nio-8080-exec-37] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+11-Jul-2025 01:15:26.329 INFO [http-nio-8080-exec-37] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107\conf\Catalina\localhost\metro-linea1.xml] has finished in [467] ms
+11-Jul-2025 01:15:26.334 INFO [http-nio-8080-exec-44] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/metro-linea1]] after start() had already been called. The second call will be ignored.
+11-Jul-2025 01:28:26.338 INFO [http-nio-8080-exec-53] org.apache.catalina.core.StandardContext.reload Ha comenzado la recarga de Contexto [/metro-linea1]
+11-Jul-2025 01:28:26.344 WARNING [http-nio-8080-exec-53] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc La aplicación web [metro-linea1] registró el conductor JDBC [com.microsoft.sqlserver.jdbc.SQLServerDriver] pero falló al anular el registro mientras la aplicación web estaba parada. Para prevenir un fallo de memoria, se ha anulado el registro del conductor JDBC por la fuerza.
+11-Jul-2025 01:28:26.729 INFO [http-nio-8080-exec-53] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+11-Jul-2025 01:28:26.756 INFO [http-nio-8080-exec-53] org.apache.catalina.core.StandardContext.reload Se ha completado la recarga de este Contexto
+11-Jul-2025 01:28:54.513 INFO [http-nio-8080-exec-48] org.apache.catalina.core.StandardContext.reload Ha comenzado la recarga de Contexto [/metro-linea1]
+11-Jul-2025 01:28:54.841 INFO [http-nio-8080-exec-48] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+11-Jul-2025 01:28:54.863 INFO [http-nio-8080-exec-48] org.apache.catalina.core.StandardContext.reload Se ha completado la recarga de este Contexto
+11-Jul-2025 01:30:55.339 INFO [http-nio-8080-exec-46] org.apache.catalina.core.StandardContext.reload Ha comenzado la recarga de Contexto [/metro-linea1]
+11-Jul-2025 01:30:55.691 INFO [http-nio-8080-exec-46] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+11-Jul-2025 01:30:55.712 INFO [http-nio-8080-exec-46] org.apache.catalina.core.StandardContext.reload Se ha completado la recarga de este Contexto
+11-Jul-2025 01:37:57.099 INFO [http-nio-8080-exec-59] org.apache.catalina.core.StandardContext.reload Ha comenzado la recarga de Contexto [/metro-linea1]
+11-Jul-2025 01:37:57.532 INFO [http-nio-8080-exec-59] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+11-Jul-2025 01:37:57.563 INFO [http-nio-8080-exec-59] org.apache.catalina.core.StandardContext.reload Se ha completado la recarga de este Contexto
+11-Jul-2025 01:37:58.085 INFO [http-nio-8080-exec-60] org.apache.catalina.startup.HostConfig.undeploy Repliegue (undeploy) de la aplicación web que tiene como trayectoria de contexto [/metro-linea1]
+11-Jul-2025 01:38:03.755 INFO [http-nio-8080-exec-64] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107\conf\Catalina\localhost\metro-linea1.xml]
+11-Jul-2025 01:38:03.756 WARNING [http-nio-8080-exec-64] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/metro-linea1] in deployment descriptor [C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107\conf\Catalina\localhost\metro-linea1.xml] has been ignored
+11-Jul-2025 01:38:04.106 INFO [http-nio-8080-exec-64] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+11-Jul-2025 01:38:04.132 INFO [http-nio-8080-exec-64] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107\conf\Catalina\localhost\metro-linea1.xml] has finished in [377] ms
+11-Jul-2025 01:38:04.137 INFO [http-nio-8080-exec-65] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/metro-linea1]] after start() had already been called. The second call will be ignored.
+11-Jul-2025 01:45:05.545 WARNING [http-nio-8080-exec-74] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc La aplicación web [metro-linea1] registró el conductor JDBC [com.microsoft.sqlserver.jdbc.SQLServerDriver] pero falló al anular el registro mientras la aplicación web estaba parada. Para prevenir un fallo de memoria, se ha anulado el registro del conductor JDBC por la fuerza.
+11-Jul-2025 01:45:06.053 INFO [http-nio-8080-exec-74] org.apache.catalina.startup.HostConfig.undeploy Repliegue (undeploy) de la aplicación web que tiene como trayectoria de contexto [/metro-linea1]
+11-Jul-2025 01:45:10.740 INFO [http-nio-8080-exec-67] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107\conf\Catalina\localhost\metro-linea1.xml]
+11-Jul-2025 01:45:10.741 WARNING [http-nio-8080-exec-67] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/metro-linea1] in deployment descriptor [C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107\conf\Catalina\localhost\metro-linea1.xml] has been ignored
+11-Jul-2025 01:45:11.109 INFO [http-nio-8080-exec-67] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+11-Jul-2025 01:45:11.138 INFO [http-nio-8080-exec-67] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Hp\Downloads\drivers\apache-tomcat-9.0.107-windows-x64\apache-tomcat-9.0.107\conf\Catalina\localhost\metro-linea1.xml] has finished in [398] ms
+11-Jul-2025 01:45:11.141 INFO [http-nio-8080-exec-73] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/metro-linea1]] after start() had already been called. The second call will be ignored.
+11-Jul-2025 02:06:57.887 INFO [main] org.apache.catalina.core.StandardServer.await Se ha recibido un comando de apagado a través del puerto de apagado. Parando la instancia del Servidor.
+11-Jul-2025 02:06:57.887 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+11-Jul-2025 02:06:57.980 INFO [main] org.apache.catalina.core.StandardService.stopInternal Parando servicio [Catalina]
+11-Jul-2025 02:06:57.997 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc La aplicación web [metro-linea1] registró el conductor JDBC [com.microsoft.sqlserver.jdbc.SQLServerDriver] pero falló al anular el registro mientras la aplicación web estaba parada. Para prevenir un fallo de memoria, se ha anulado el registro del conductor JDBC por la fuerza.
+11-Jul-2025 02:06:58.000 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+11-Jul-2025 02:06:58.028 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
