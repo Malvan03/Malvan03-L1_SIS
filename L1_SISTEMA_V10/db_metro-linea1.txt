@@ -1,0 +1,325 @@
+-- 1. Eliminar y recrear toda la base de datos metro_linea1
+USE master;
+GO
+IF DB_ID('metro_linea1') IS NOT NULL
+BEGIN
+    ALTER DATABASE metro_linea1 SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+    DROP DATABASE metro_linea1;
+END
+GO
+
+CREATE DATABASE metro_linea1;
+GO
+
+USE metro_linea1;
+GO
+
+-- 2. Crear tablas principales y relaciones
+CREATE TABLE USUARIO (
+    id_usuario INT IDENTITY(1,1) PRIMARY KEY,
+    dni NVARCHAR(8) NOT NULL UNIQUE,
+    nombres NVARCHAR(100) NOT NULL,
+    apellido_paterno NVARCHAR(50),
+    apellido_materno NVARCHAR(50),
+    correo NVARCHAR(100) NOT NULL UNIQUE,
+    telefono NVARCHAR(15),
+    contacto_emergencia NVARCHAR(100),
+    fecha_nacimiento DATE,
+    contrasena_hash NVARCHAR(255) NOT NULL,
+    rol NVARCHAR(15) NOT NULL CHECK (rol IN ('ADMINISTRADOR','CONDUCTOR')),
+    foto_perfil NVARCHAR(255),
+    estado NVARCHAR(10) NOT NULL DEFAULT 'ACTIVO' CHECK (estado IN ('ACTIVO','INACTIVO')),
+    fecha_registro DATETIME2 DEFAULT GETDATE(),
+    fecha_ultimo_login DATETIME2 NULL,
+    intentos_fallidos INT DEFAULT 0,
+    bloqueado_hasta DATETIME2 NULL,
+    token_recuperacion NVARCHAR(255) NULL,
+    fecha_expiracion_token DATETIME2 NULL
+);
+
+CREATE TABLE PARAMETRO_SISTEMA (
+    id_parametro INT IDENTITY(1,1) PRIMARY KEY,
+    clave NVARCHAR(50) NOT NULL UNIQUE,
+    valor NVARCHAR(255) NOT NULL,
+    descripcion NVARCHAR(255),
+    fecha_modificacion DATETIME2 DEFAULT GETDATE()
+);
+
+CREATE TABLE CONDUCTOR (
+    id_conductor INT IDENTITY(1,1) PRIMARY KEY,
+    id_usuario INT NOT NULL,
+    modalidad NVARCHAR(15) NOT NULL CHECK (modalidad IN ('FIJO','ROTATIVO')),
+    base NVARCHAR(50) NOT NULL,
+    fecha_ingreso DATE NOT NULL,
+    habilitado BIT DEFAULT 1,
+    estado_personal NVARCHAR(15) NOT NULL DEFAULT 'ACTIVO' CHECK (estado_personal IN ('ACTIVO','SUSPENDIDO','CESADO','DESCANSO_MEDICO')),
+    observaciones NVARCHAR(255),
+    horas_sueno_requeridas INT DEFAULT 8,
+    horas_semanales_objetivo DECIMAL(5,2) NULL,
+    CONSTRAINT fk_conductor_usuario FOREIGN KEY (id_usuario) REFERENCES USUARIO(id_usuario)
+);
+
+CREATE TABLE TURNO (
+    id_turno INT IDENTITY(1,1) PRIMARY KEY,
+    id_conductor INT NOT NULL,
+    dia_semana NVARCHAR(10) NOT NULL CHECK (dia_semana IN ('LUNES','MARTES','MIERCOLES','JUEVES','VIERNES','SABADO','DOMINGO')),
+    hora_inicio TIME NOT NULL,
+    hora_fin TIME NOT NULL,
+    carreras INT DEFAULT 0,
+    fecha DATE NOT NULL,
+    saldo_tiempo INT DEFAULT 0,
+    tiempo_laborado INT DEFAULT 0,
+    turno_anterior INT NULL,
+    observaciones NVARCHAR(255) NULL,
+    nombre_turno NVARCHAR(50) NULL,
+    CONSTRAINT fk_turno_conductor FOREIGN KEY (id_conductor) REFERENCES CONDUCTOR(id_conductor)
+);
+
+CREATE TABLE TURNO_CARRERA (
+    id_turno_carrera INT IDENTITY(1,1) PRIMARY KEY,
+    id_turno INT NOT NULL,
+    numero_carrera INT NOT NULL,
+    dia_aplica NVARCHAR(10),
+    origen_turno NVARCHAR(10),
+    fin_turno NVARCHAR(10),
+    hora_inicio TIME,
+    hora_fin TIME,
+    carrera_procede NVARCHAR(20),
+    carrera_conducir NVARCHAR(20),
+    origen_carrera NVARCHAR(10),
+    destino_carrera NVARCHAR(10),
+    hora_salida_carrera TIME,
+    hora_llegada_carrera TIME,
+    tren_continua NVARCHAR(20),
+    tipo_carrera NVARCHAR(10),
+    refrigerio BIT DEFAULT 0,
+    hora_refrigerio TIME NULL,
+    duracion_refrigerio INT NULL,
+    num_carreras INT,
+    notas NVARCHAR(255),
+    hora_ingreso TIME,
+    hora_salida TIME,
+    total_horas_trabajadas INT,
+    CONSTRAINT fk_turcarr_turno FOREIGN KEY (id_turno) REFERENCES TURNO(id_turno)
+);
+
+CREATE TABLE SOLICITUD_CAMBIO_TURNO (
+    id_solicitud INT IDENTITY(1,1) PRIMARY KEY,
+    fecha_solicitud DATETIME2 DEFAULT GETDATE(),
+    fecha_cambio DATE NOT NULL,
+    id_conductor_solicitante INT NOT NULL,
+    id_turno_original INT NOT NULL,
+    id_conductor_destino INT NOT NULL,
+    id_turno_nuevo INT NOT NULL,
+    estado_confirmacion_companero NVARCHAR(10) DEFAULT 'PENDIENTE' CHECK (estado_confirmacion_companero IN ('PENDIENTE','ACEPTADO','RECHAZADO')),
+    estado_confirmacion_admin NVARCHAR(10) DEFAULT 'PENDIENTE' CHECK (estado_confirmacion_admin IN ('PENDIENTE','ACEPTADO','RECHAZADO')),
+    mensaje NVARCHAR(255),
+    observaciones NVARCHAR(255),
+    validacion_horas_sueno BIT,
+    validacion_coincidencia BIT,
+    validacion_saldo_tiempo BIT,
+    fecha_respuesta_companero DATETIME2 NULL,
+    fecha_respuesta_admin DATETIME2 NULL,
+    id_admin INT NULL,
+    CONSTRAINT fk_solicitud_conductor_solicitante FOREIGN KEY (id_conductor_solicitante) REFERENCES CONDUCTOR(id_conductor),
+    CONSTRAINT fk_solicitud_conductor_destino FOREIGN KEY (id_conductor_destino) REFERENCES CONDUCTOR(id_conductor),
+    CONSTRAINT fk_solicitud_turno_original FOREIGN KEY (id_turno_original) REFERENCES TURNO(id_turno),
+    CONSTRAINT fk_solicitud_turno_nuevo FOREIGN KEY (id_turno_nuevo) REFERENCES TURNO(id_turno),
+    CONSTRAINT fk_solicitud_admin FOREIGN KEY (id_admin) REFERENCES USUARIO(id_usuario)
+);
+
+CREATE TABLE NOTIFICACION (
+    id_notificacion INT IDENTITY(1,1) PRIMARY KEY,
+    id_usuario INT NOT NULL,
+    remitente NVARCHAR(100) NOT NULL,
+    mensaje NVARCHAR(255) NOT NULL,
+    fecha DATETIME2 DEFAULT GETDATE(),
+    leido BIT DEFAULT 0,
+    tipo_notificacion NVARCHAR(30) DEFAULT 'GENERAL' CHECK (tipo_notificacion IN ('SOLICITUD_CAMBIO','APROBACION','RECHAZO','PROGRAMACION','SISTEMA','GENERAL')),
+    id_referencia INT NULL,
+    CONSTRAINT fk_notificacion_usuario FOREIGN KEY (id_usuario) REFERENCES USUARIO(id_usuario)
+);
+
+CREATE TABLE AUDITORIA (
+    id_auditoria INT IDENTITY(1,1) PRIMARY KEY,
+    id_usuario INT NOT NULL,
+    accion NVARCHAR(100) NOT NULL,
+    descripcion NVARCHAR(MAX),
+    fecha_hora DATETIME2 DEFAULT GETDATE(),
+    tipo_accion NVARCHAR(20) DEFAULT 'OTRO' CHECK (tipo_accion IN ('LOGIN','CAMBIO_TURNO','EDICION_USUARIO','EDICION_CONDUCTOR','GENERACION_REPORTE','OTRO')),
+    ip_origen NVARCHAR(50) NULL,
+    tabla_afectada NVARCHAR(50) NULL,
+    id_registro_afectado INT NULL,
+    CONSTRAINT fk_auditoria_usuario FOREIGN KEY (id_usuario) REFERENCES USUARIO(id_usuario)
+);
+
+-- 3. Insertar parámetros básicos del sistema
+INSERT INTO PARAMETRO_SISTEMA (clave, valor, descripcion)
+VALUES 
+('MIN_HORAS_SUENO', '8', 'Mínimo de horas de sueño requeridas entre turnos'),
+('MAX_HORAS_TRABAJO_PART_TIME', '23.75', 'Máximo de horas de trabajo semanal para Part-Time (23h 45min)'),
+('MAX_HORAS_TRABAJO_FULL_TIME', '48', 'Máximo de horas de trabajo semanal para Full-Time'),
+('DIAS_EXPIRACION_PASSWORD', '90', 'Número de días antes de que expire una contraseña'),
+('VERSION_SISTEMA', '1.0', 'Versión actual del sistema');
+GO
+
+-- 4. Insertar usuarios básicos
+INSERT INTO USUARIO (dni, nombres, apellido_paterno, apellido_materno, correo, telefono, contacto_emergencia, fecha_nacimiento, contrasena_hash, rol, foto_perfil, estado)
+VALUES 
+('73056176', N'Mauro', N'Alvan', N'De la Cruz', N'mauro.alvan@ejemplo.com', N'999123456', N'Paula De la Cruz', '1993-04-10', N'$2a$10$vLjDUwUVZ0U7myiziiNP8u/p2ywauAnaVwAsmlzCYEb8.Kq4u.GzO', N'ADMINISTRADOR', NULL, N'ACTIVO'),
+('74379748', N'Karolay', N'Huamani', N'Villavicencio', N'karolay.huamani@ejemplo.com', N'988654321', N'José Huamani', '1998-10-22', N'$2a$10$jEH6/mAt6pyY5ZpI7kFMqeKY6WSVpqQeU3ZqQuSljqAGLnbfCobBC', N'CONDUCTOR', NULL, N'ACTIVO'),
+('75610056', N'Joel Jefferson', N'Huamani', N'Villavicencio', N'U22214658@utp.edu.pe', N'981455671', N'Mauro Alvan', '2001-12-16', N'$2a$10$/L8/ntYttjohzFp7J2ouGeImju6WNKldXk6KspHlNSf0YIoorqSjK', N'CONDUCTOR', NULL, N'ACTIVO');
+GO
+
+-- 5. Crear conductores para Karolay y Joel
+INSERT INTO CONDUCTOR (id_usuario, modalidad, base, fecha_ingreso, habilitado, estado_personal, observaciones, horas_sueno_requeridas)
+SELECT id_usuario, N'FIJO', N'BASE C', '2023-06-01', 1, N'ACTIVO', NULL, 8 
+FROM USUARIO WHERE dni = '74379748';
+
+INSERT INTO CONDUCTOR (id_usuario, modalidad, base, fecha_ingreso, habilitado, estado_personal, observaciones, horas_sueno_requeridas)
+SELECT id_usuario, N'ROTATIVO', N'BAY', '2023-03-01', 1, N'ACTIVO', N'USO DE LENTES OBLIGATORIO', 8 
+FROM USUARIO WHERE dni = '75610056';
+GO
+
+-- 6. Insertar turnos ejemplo para Karolay (descansa miércoles) y Joel (descansa miércoles)
+-- Karolay
+INSERT INTO TURNO (id_conductor, dia_semana, hora_inicio, hora_fin, carreras, fecha, saldo_tiempo, tiempo_laborado, turno_anterior, observaciones, nombre_turno)
+SELECT c.id_conductor, 'LUNES',    '06:00:00', '15:00:00', 5, '2025-07-21', 0, 540, NULL, 'Turno regular de mañana', 'Mañana'
+FROM CONDUCTOR c INNER JOIN USUARIO u ON c.id_usuario = u.id_usuario WHERE u.dni = '74379748'
+UNION ALL
+SELECT c.id_conductor, 'MARTES',   '06:00:00', '15:00:00', 5, '2025-07-22', 0, 540, NULL, 'Turno regular de mañana', 'Mañana'
+FROM CONDUCTOR c INNER JOIN USUARIO u ON c.id_usuario = u.id_usuario WHERE u.dni = '74379748'
+UNION ALL
+SELECT c.id_conductor, 'JUEVES',   '06:00:00', '15:00:00', 5, '2025-07-24', 0, 540, NULL, 'Turno regular de mañana', 'Mañana'
+FROM CONDUCTOR c INNER JOIN USUARIO u ON c.id_usuario = u.id_usuario WHERE u.dni = '74379748'
+UNION ALL
+SELECT c.id_conductor, 'VIERNES',  '06:00:00', '15:00:00', 5, '2025-07-25', 0, 540, NULL, 'Turno regular de mañana', 'Mañana'
+FROM CONDUCTOR c INNER JOIN USUARIO u ON c.id_usuario = u.id_usuario WHERE u.dni = '74379748'
+UNION ALL
+SELECT c.id_conductor, 'SABADO',   '06:00:00', '15:00:00', 5, '2025-07-26', 0, 540, NULL, 'Turno regular de mañana', 'Mañana'
+FROM CONDUCTOR c INNER JOIN USUARIO u ON c.id_usuario = u.id_usuario WHERE u.dni = '74379748'
+UNION ALL
+SELECT c.id_conductor, 'DOMINGO',  '06:00:00', '15:00:00', 5, '2025-07-27', 0, 540, NULL, 'Turno regular de mañana', 'Mañana'
+FROM CONDUCTOR c INNER JOIN USUARIO u ON c.id_usuario = u.id_usuario WHERE u.dni = '74379748';
+
+-- Joel
+INSERT INTO TURNO (id_conductor, dia_semana, hora_inicio, hora_fin, carreras, fecha, saldo_tiempo, tiempo_laborado, turno_anterior, observaciones, nombre_turno)
+SELECT c.id_conductor, 'LUNES',    '06:00:00', '15:00:00', 5, '2025-07-21', 0, 540, NULL, 'Turno regular de mañana', 'Mañana'
+FROM CONDUCTOR c INNER JOIN USUARIO u ON c.id_usuario = u.id_usuario WHERE u.dni = '75610056'
+UNION ALL
+SELECT c.id_conductor, 'MARTES',   '06:00:00', '15:00:00', 5, '2025-07-22', 0, 540, NULL, 'Turno regular de mañana', 'Mañana'
+FROM CONDUCTOR c INNER JOIN USUARIO u ON c.id_usuario = u.id_usuario WHERE u.dni = '75610056'
+UNION ALL
+SELECT c.id_conductor, 'JUEVES',   '06:00:00', '15:00:00', 5, '2025-07-24', 0, 540, NULL, 'Turno regular de mañana', 'Mañana'
+FROM CONDUCTOR c INNER JOIN USUARIO u ON c.id_usuario = u.id_usuario WHERE u.dni = '75610056'
+UNION ALL
+SELECT c.id_conductor, 'VIERNES',  '06:00:00', '15:00:00', 5, '2025-07-25', 0, 540, NULL, 'Turno regular de mañana', 'Mañana'
+FROM CONDUCTOR c INNER JOIN USUARIO u ON c.id_usuario = u.id_usuario WHERE u.dni = '75610056'
+UNION ALL
+SELECT c.id_conductor, 'SABADO',   '06:00:00', '15:00:00', 5, '2025-07-26', 0, 540, NULL, 'Turno regular de mañana', 'Mañana'
+FROM CONDUCTOR c INNER JOIN USUARIO u ON c.id_usuario = u.id_usuario WHERE u.dni = '75610056'
+UNION ALL
+SELECT c.id_conductor, 'DOMINGO',  '06:00:00', '15:00:00', 5, '2025-07-27', 0, 540, NULL, 'Turno regular de mañana', 'Mañana'
+FROM CONDUCTOR c INNER JOIN USUARIO u ON c.id_usuario = u.id_usuario WHERE u.dni = '75610056';
+GO
+
+-- 7. Insertar carreras ejemplo para el primer turno de Karolay y Joel (LUNES)
+-- Karolay LUNES
+INSERT INTO TURNO_CARRERA (
+    id_turno, numero_carrera, dia_aplica, origen_turno, fin_turno, hora_inicio, hora_fin,
+    carrera_procede, carrera_conducir, origen_carrera, destino_carrera, hora_salida_carrera,
+    hora_llegada_carrera, tren_continua, tipo_carrera, refrigerio, hora_refrigerio,
+    duracion_refrigerio, num_carreras, notas, hora_ingreso, hora_salida, total_horas_trabajadas
+)
+SELECT t.id_turno, 1, 'LUNES', 'VES', 'BAY', '06:00:00', '07:00:00', 'PVES.2', '1006', 'VES', 'BAY', '06:10:00', '07:00:00', '1025', 'PAR', 0, NULL, NULL, 5, NULL, '06:00:00', '15:00:00', 540
+FROM TURNO t
+INNER JOIN CONDUCTOR c ON t.id_conductor = c.id_conductor
+INNER JOIN USUARIO u ON c.id_usuario = u.id_usuario
+WHERE u.dni = '74379748' AND t.dia_semana = 'LUNES'
+UNION ALL
+SELECT t.id_turno, 2, 'LUNES', 'BAY', 'VES', '07:00:00', '08:00:00', '1008', '1031', 'BAY', 'VES', '07:10:00', '08:00:00', '1062', 'IMPAR', 0, NULL, NULL, 5, NULL, '06:00:00', '15:00:00', 540
+FROM TURNO t
+INNER JOIN CONDUCTOR c ON t.id_conductor = c.id_conductor
+INNER JOIN USUARIO u ON c.id_usuario = u.id_usuario
+WHERE u.dni = '74379748' AND t.dia_semana = 'LUNES';
+
+-- Joel LUNES
+INSERT INTO TURNO_CARRERA (
+    id_turno, numero_carrera, dia_aplica, origen_turno, fin_turno, hora_inicio, hora_fin,
+    carrera_procede, carrera_conducir, origen_carrera, destino_carrera, hora_salida_carrera,
+    hora_llegada_carrera, tren_continua, tipo_carrera, refrigerio, hora_refrigerio,
+    duracion_refrigerio, num_carreras, notas, hora_ingreso, hora_salida, total_horas_trabajadas
+)
+SELECT t.id_turno, 1, 'LUNES', 'BAY', 'VES', '06:00:00', '07:00:00', 'PBAY.1', '1001', 'BAY', 'VES', '06:15:00', '07:00:00', '1016', 'IMPAR', 0, NULL, NULL, 5, NULL, '06:00:00', '15:00:00', 540
+FROM TURNO t
+INNER JOIN CONDUCTOR c ON t.id_conductor = c.id_conductor
+INNER JOIN USUARIO u ON c.id_usuario = u.id_usuario
+WHERE u.dni = '75610056' AND t.dia_semana = 'LUNES'
+UNION ALL
+SELECT t.id_turno, 2, 'LUNES', 'VES', 'BAY', '07:00:00', '08:00:00', '1003', '1020', 'VES', 'BAY', '07:15:00', '08:00:00', '1055', 'PAR', 0, NULL, NULL, 5, NULL, '06:00:00', '15:00:00', 540
+FROM TURNO t
+INNER JOIN CONDUCTOR c ON t.id_conductor = c.id_conductor
+INNER JOIN USUARIO u ON c.id_usuario = u.id_usuario
+WHERE u.dni = '75610056' AND t.dia_semana = 'LUNES';
+GO
+
+-- 8. Insertar una solicitud de cambio ejemplo (Karolay solicita a Joel el JUEVES)
+INSERT INTO SOLICITUD_CAMBIO_TURNO (
+    fecha_solicitud, fecha_cambio, id_conductor_solicitante, id_turno_original, id_conductor_destino, id_turno_nuevo,
+    estado_confirmacion_companero, estado_confirmacion_admin, mensaje, observaciones, validacion_horas_sueno, validacion_coincidencia, validacion_saldo_tiempo
+)
+SELECT
+    GETDATE(),
+    '2025-07-24',
+    c1.id_conductor,
+    t1.id_turno,
+    c2.id_conductor,
+    t2.id_turno,
+    'PENDIENTE',
+    'PENDIENTE',
+    'Solicito cambio por estudios',
+    'Cumple horas de sueño y coincide turno',
+    1, 1, 1
+FROM CONDUCTOR c1
+INNER JOIN USUARIO u1 ON c1.id_usuario = u1.id_usuario
+INNER JOIN TURNO t1 ON t1.id_conductor = c1.id_conductor AND t1.dia_semana = 'JUEVES'
+CROSS JOIN CONDUCTOR c2
+INNER JOIN USUARIO u2 ON c2.id_usuario = u2.id_usuario
+INNER JOIN TURNO t2 ON t2.id_conductor = c2.id_conductor AND t2.dia_semana = 'JUEVES'
+WHERE u1.dni = '74379748' AND u2.dni = '75610056';
+
+-- 9. Insertar notificación de ejemplo (para Karolay)
+INSERT INTO NOTIFICACION (id_usuario, remitente, mensaje, tipo_notificacion, leido, id_referencia)
+SELECT u.id_usuario, 'Sistema',
+    'Tienes una solicitud de cambio pendiente (Karolay ↔ Joel - JUEVES)',
+    'SOLICITUD_CAMBIO', 0, s.id_solicitud
+FROM USUARIO u
+JOIN CONDUCTOR c ON c.id_usuario = u.id_usuario
+JOIN SOLICITUD_CAMBIO_TURNO s ON s.id_conductor_solicitante = c.id_conductor
+WHERE u.dni = '74379748';
+
+-- 10. Insertar auditoría de ejemplo
+INSERT INTO AUDITORIA (id_usuario, accion, descripcion, tipo_accion, tabla_afectada, id_registro_afectado)
+SELECT u.id_usuario,
+    'Cambio de turno',
+    'El administrador Mauro aprobó la solicitud de cambio de turno (Karolay ↔ Joel - JUEVES)',
+    'CAMBIO_TURNO',
+    'SOLICITUD_CAMBIO_TURNO',
+    s.id_solicitud
+FROM USUARIO u
+JOIN SOLICITUD_CAMBIO_TURNO s ON 1=1
+WHERE u.dni = '73056176';
+
+-- 11. Consultas de prueba
+SELECT * FROM USUARIO;
+SELECT * FROM CONDUCTOR;
+SELECT * FROM TURNO;
+SELECT * FROM TURNO_CARRERA;
+SELECT * FROM SOLICITUD_CAMBIO_TURNO;
+SELECT * FROM NOTIFICACION;
+SELECT * FROM AUDITORIA;
+SELECT * FROM PARAMETRO_SISTEMA;
+GO
+
+PRINT 'Base de datos metro_linea1 lista, funcional y sin errores de variables.';
+GO
